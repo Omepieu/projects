@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: django-polls
+Version: 0.1
+Summary: A Django app to conduct web-based polls.
+Home-page: https://www.example.com/
+Author: Your Name
+Author-email: romainkp62@example.com
+License: BSD-3-romain  # Example license
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 4.2.5  # Replace "X.Y" as appropriate
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.8
+License-File: LICENCE
+
+======
+polls
+======
+
+Polls est une appl de Django base sur le web polls. pour chaque question 
+visiteurs peuvent choisir une seule reponse
+
+demarrage rapide 
+----------------
+1. Ajouter "polls" de ton INSTALLED_APP settings.py comme ça::
+    INSTALLED_APP = [
+        ......,
+        "polls"
+    ]
+
+2. Include URLconf de polls dans ton projet a l'interieur urls.py comme::
+    path("polls/", include("polls.urls"))
+
+3. lancer la commande ``python manage.py migrate)``  pour créer models de polls
+4. demarrer le serveur de développement et visité http://127.0.0.1:8000/admin/
+    poor les models de poll
+5. visité http://127.0.0.1:8000/polls/ 

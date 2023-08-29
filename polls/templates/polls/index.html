@@ -1,0 +1,45 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appls de sondage</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'polls/style.css' %}"> {% endcomment %}
+    {% tailwind_css %}
+</head>
+<body class="bg-gray-400">
+    <header class="container">
+        <nav class="h-11 text-center">
+            <ul class="w-2/4 p-1 flex flex-row text-center">
+                <li class="m-2"><a class="font-serif font-normal" href="">Actualité</a></li>
+                <li class="m-2"><a class="font-serif font-normal" href="">Questionnaire</a></li>
+                <li class="m-2"><a class="font-serif font-normal" href="">Résultats</a></li>
+                <li class="m-2"><a class="font-serif font-normal" href="">contact</a></li>
+            </ul>
+        </nav>
+        <hr class="bg-slate-200 border-1">
+    </header>
+    
+    <div class="container">
+        <div class="flex flex-row w-full h-auto">
+            <div class="h-100 w-2/4 text-right p-5">
+                {% if latest_question_list %}
+                <ul class="h-auto">
+                    {% for question  in latest_question_list %}
+                        <li class="px-4 h-9 w-full shadow-blue-200">
+                            <a class="text-black capitalize" href="{% url 'polls:detail' question.id %}">{{question.question_text}}</a>
+                        </li>
+                        
+                    {% endfor %}
+                </ul>
+                {% else %}
+                    <p class="text-red-700 h-full text-center">Le contenu de polls est vide pour l'instant.</p>
+                {% endif %}
+            </div>
+            <div class="w-2/4"><img src="{% static 'images/img4.png' %}" alt="" srcset=""></div>
+        </div>
+    </div>
+</body>
+</html>
